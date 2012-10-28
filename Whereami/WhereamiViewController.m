@@ -24,6 +24,7 @@
         [locationManager setDelegate:self];
         
         [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+        [locationManager setDistanceFilter:50.0];
         
         [locationManager startUpdatingLocation];
     }
@@ -41,6 +42,7 @@
     didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation
 {
+    
     NSLog(@"%@", newLocation);
 }
 
