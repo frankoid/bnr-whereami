@@ -27,6 +27,7 @@
         [locationManager setDistanceFilter:50.0];
         
         [locationManager startUpdatingLocation];
+        [locationManager startUpdatingHeading];
     }
     
     return self;
@@ -50,6 +51,12 @@
        didFailWithError:(NSError *)error
 {
     NSLog(@"Could not find location: %@", error);
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+didUpdateHeading:(CLHeading *)newHeading
+{
+    NSLog(@"New heading: %@", newHeading);
 }
 
 @end
